@@ -20,7 +20,7 @@
 | `REDIS_URL` | Render tự lấy từ connection string của Key Value; không ghi URL chứa credential vào repo |
 | `AGENT_API_KEY` | Đặt riêng trong Render khi tạo Blueprint; không ghi giá trị vào repo |
 
-Railway đã thử trước đó nhưng workspace bị giới hạn và Redis deployment Failed, nên không có public URL Railway để kiểm chứng. Học viên báo Render web service đã Live. Kiểm tra public URL ngày 26/11/2026 lúc 20:58 (GMT+7): `/health` **HTTP 200**, body `{"status":"ok","environment":"production","uptime_seconds":114.46}`; `/ready` **HTTP 200**, body `{"ready":true}`; `/ask` khi thiếu key **HTTP 401**, body `{"detail":"Missing or invalid API key"}`. `/ready` 200 chứng tỏ app kết nối được Redis tại thời điểm kiểm tra. Học viên chạy lệnh `curl` có `X-API-Key` trong WSL và báo **HTTP 200**; AI không nhận hoặc lưu giá trị key. Trạng thái Key Value trên giao diện Render chưa được xác nhận riêng.
+Railway đã thử trước đó nhưng workspace bị giới hạn và Redis deployment Failed, nên không có public URL Railway để kiểm chứng. Học viên báo Render web service đã Live; ảnh Dashboard cho thấy `k5-day14-agent` Deployed và `k5-day14-cache` Available. Kiểm tra public URL ngày 26/11/2026 lúc 20:58 (GMT+7): `/health` **HTTP 200**, body `{"status":"ok","environment":"production","uptime_seconds":114.46}`; `/ready` **HTTP 200**, body `{"ready":true}`; `/ask` khi thiếu key **HTTP 401**, body `{"detail":"Missing or invalid API key"}`. `/ready` 200 chứng tỏ app kết nối được Redis tại thời điểm kiểm tra. Học viên chạy lệnh `curl` có `X-API-Key` trong WSL và báo **HTTP 200**; AI không nhận hoặc lưu giá trị key.
 
 ## Kiểm tra public URL
 
@@ -42,6 +42,6 @@ unset AGENT_API_KEY
 
 ## Bằng chứng giao diện
 
-- [ ] `screenshots/dashboard.png` — Render Dashboard hiển thị cả web service và Key Value.
-- [ ] `screenshots/running.png` — web service trạng thái Live và URL public.
+- [x] `screenshots/dashboard.png` — Render Dashboard hiển thị `k5-day14-agent` Deployed và `k5-day14-cache` Available.
+- [x] `screenshots/running.png` — web service trạng thái Live và URL public.
 - [ ] `screenshots/test.png` — kết quả gọi endpoint từ public URL.
