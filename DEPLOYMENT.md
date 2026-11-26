@@ -20,7 +20,7 @@
 | `REDIS_URL` | Render tự lấy từ connection string của Key Value; không ghi URL chứa credential vào repo |
 | `AGENT_API_KEY` | Đặt riêng trong Render khi tạo Blueprint; không ghi giá trị vào repo |
 
-Railway đã thử trước đó nhưng workspace bị giới hạn và Redis deployment Failed, nên không có public URL Railway để kiểm chứng. Học viên báo Render web service đã Live. Kiểm tra public URL ngày 26/11/2026 lúc 20:58 (GMT+7): `/health` **HTTP 200**, body `{"status":"ok","environment":"production","uptime_seconds":114.46}`; `/ready` **HTTP 200**, body `{"ready":true}`; `/ask` khi thiếu key **HTTP 401**, body `{"detail":"Missing or invalid API key"}`. `/ready` 200 chứng tỏ app kết nối được Redis tại thời điểm kiểm tra; trạng thái Key Value trên giao diện Render và `/ask` với key đúng chưa được xác nhận.
+Railway đã thử trước đó nhưng workspace bị giới hạn và Redis deployment Failed, nên không có public URL Railway để kiểm chứng. Học viên báo Render web service đã Live. Kiểm tra public URL ngày 26/11/2026 lúc 20:58 (GMT+7): `/health` **HTTP 200**, body `{"status":"ok","environment":"production","uptime_seconds":114.46}`; `/ready` **HTTP 200**, body `{"ready":true}`; `/ask` khi thiếu key **HTTP 401**, body `{"detail":"Missing or invalid API key"}`. `/ready` 200 chứng tỏ app kết nối được Redis tại thời điểm kiểm tra. Học viên chạy lệnh `curl` có `X-API-Key` trong WSL và báo **HTTP 200**; AI không nhận hoặc lưu giá trị key. Trạng thái Key Value trên giao diện Render chưa được xác nhận riêng.
 
 ## Kiểm tra public URL
 
@@ -38,7 +38,7 @@ curl -i -X POST "$BASE_URL/ask" -H "X-API-Key: $AGENT_API_KEY" -H 'Content-Type:
 unset AGENT_API_KEY
 ```
 
-Đã xác nhận ba kết quả đầu: `/health` **200**, `/ready` **200**, `/ask` thiếu key **401**. Còn cần xác nhận `/ask` có key **200** bằng lệnh cuối; chỉ ghi kết quả sau khi có response thực tế.
+Đã xác nhận đủ bốn mã HTTP: `/health` **200**, `/ready` **200**, `/ask` thiếu key **401**, `/ask` có key **200**. Ba kết quả đầu do AI gọi trực tiếp; kết quả cuối dựa trên output terminal học viên cung cấp.
 
 ## Bằng chứng giao diện
 
