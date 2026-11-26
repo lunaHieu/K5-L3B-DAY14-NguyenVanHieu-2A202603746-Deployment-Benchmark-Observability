@@ -73,7 +73,7 @@
 - [x] `screenshots/grafana-dashboard.png`: Dashboard Grafana khi đang có tải (Golden Signals).
 - [x] `screenshots/jaeger-slow-trace.png`: trace chậm `70d885ec363a3a6d3451c42ec1cb54ad`.
 - [x] `screenshots/jaeger-error-trace.png`: trace lỗi `9dd14e4c6eb555d6493b17842edb0549`, phần Details hiển thị event `exception` và upstream mock 503.
-- [ ] `screenshots/prometheus-alert-firing.png`: trang Prometheus Alerts. API đã xác nhận `AgentHighErrorRate` và `AgentHighLatencyP95` cùng firing lúc 20:44:06 (GMT+7); ảnh cần chụp trong lượt tải tiếp theo.
+- [x] `screenshots/prometheus-alert-firing.png`: trang Prometheus Alerts hiển thị đồng thời `AgentHighErrorRate` và `AgentHighLatencyP95` ở trạng thái Firing. API cũng xác nhận cả hai cùng firing trong lượt đo lúc 20:44:06 (GMT+7).
 
 ### 4.2 Thí nghiệm "phá hệ thống"
 
