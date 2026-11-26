@@ -71,8 +71,8 @@
 ### 4.1 Screenshot
 
 - [x] `screenshots/grafana-dashboard.png`: Dashboard Grafana khi đang có tải (Golden Signals).
-- [ ] `screenshots/jaeger-slow-trace.png`: trace chậm `70d885ec363a3a6d3451c42ec1cb54ad`.
-- [ ] `screenshots/jaeger-error-trace.png`: trace lỗi `9dd14e4c6eb555d6493b17842edb0549`, span `chat mock-llm-small` có event `exception`.
+- [x] `screenshots/jaeger-slow-trace.png`: trace chậm `70d885ec363a3a6d3451c42ec1cb54ad`.
+- [ ] `screenshots/jaeger-error-trace.png`: ảnh hiện có cho thấy HTTP 503 và span lỗi; cần chụp lại với event `exception` đang mở trong trace `9dd14e4c6eb555d6493b17842edb0549`.
 - [ ] `screenshots/prometheus-alert-firing.png`: trang Prometheus Alerts. API đã xác nhận `AgentHighErrorRate` và `AgentHighLatencyP95` cùng firing lúc 20:44:06 (GMT+7); ảnh cần chụp trong lượt tải tiếp theo.
 
 ### 4.2 Thí nghiệm "phá hệ thống"
