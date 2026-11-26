@@ -44,4 +44,4 @@ unset AGENT_API_KEY
 
 - [x] `screenshots/dashboard.png` — Render Dashboard hiển thị `k5-day14-agent` Deployed và `k5-day14-cache` Available.
 - [x] `screenshots/running.png` — web service trạng thái Live và URL public.
-- [ ] `screenshots/test.png` — kết quả gọi endpoint từ public URL.
+- [x] `screenshots/test.png` — terminal hiển thị `/health` 200, `/ready` 200, `/ask` thiếu key 401 và có key 200.
