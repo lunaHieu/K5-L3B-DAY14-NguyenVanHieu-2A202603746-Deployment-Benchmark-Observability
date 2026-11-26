@@ -1,7 +1,5 @@
 # Deployment — Day 14
 
-**Học viên:** Nguyễn Văn Hiếu
-
 **Nền tảng:** Render Blueprint (`06-lab-complete/render.yaml`)
 
 **Branch:** `main`
