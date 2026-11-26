@@ -19,6 +19,7 @@ Simulate shutdown:
     # Xem agent log graceful shutdown message
 """
 import os
+import asyncio
 import time
 import signal
 import logging
@@ -94,7 +95,8 @@ def root():
 async def ask_agent(question: str):
     if not _is_ready:
         raise HTTPException(503, "Agent not ready")
-    return {"answer": ask(question)}
+    # Mock LLM dùng time.sleep(); chạy trong thread để không chặn event loop.
+    return {"answer": await asyncio.to_thread(ask, question)}
 
 
 # ──────────────────────────────────────────────────────────
